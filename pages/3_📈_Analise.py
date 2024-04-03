@@ -311,7 +311,7 @@ if __name__ == '__main__':
             df = get_df_final_v2()
             df_grouped_by_categoria_bolsa = df[['categoria_bolsa', 'ANO_PESQUISA']].groupby('categoria_bolsa').count().reset_index()
 
-            st.subheader('Avaliação das bolsas 2022')
+            st.subheader('Análise de indicadores por alunos indicados ou não a bolsa no ano de pesquisa 2022')
 
             st.write('COMPARAÇÃO DOS INDICADOS E NÃO INDICADOS A BOLSA EM 2022')
             fig = px.pie(df_grouped_by_categoria_bolsa, values='ANO_PESQUISA', names='categoria_bolsa')
@@ -407,10 +407,10 @@ if __name__ == '__main__':
 
             st.divider()
 
-            st.subheader('Modelo de Machine Learning')
-            st.write('Alunos')
+            # st.subheader('Modelo de Machine Learning')
+            # st.write('Alunos')
 
-            df_final_tratado = get_df_final()
+            # df_final_tratado = get_df_final()
 
             # #fig = df_final_tratado.hist(bins=100, figsize=(12, 12))
             # fig, ax = plt.subplots()
@@ -442,23 +442,25 @@ if __name__ == '__main__':
             sns.heatmap(data=correlation_matrix, annot=True, linewidths=.5, ax=ax)
             st.pyplot(fig)
 
-            st.divider()
+             st.write('''
+                    
+                    Adicionar algum texto nessa parte - senão retirar
 
-            st.subheader('Histograma resumido')
-
-            fig, ax = plt.subplots(figsize=(15,10))
-            df_filtrado.hist(bins=100, figsize=(12, 12), ax=ax)
-            st.pyplot(fig)
+            ''')
 
             st.divider()
 
-            st.header('Médias dos indicadores por fase e status de bolsista')
+            # st.subheader('Histograma resumido')
+
+            # fig, ax = plt.subplots(figsize=(15,10))
+            # df_filtrado.hist(bins=100, figsize=(12, 12), ax=ax)
+            # st.pyplot(fig)
+
+            # st.divider()
+
+            st.header('Análise dos indicadores dos alunos por fase e status de bolsista')
             st.write('''
                     
-                    Ao analisar o tempo de permanência, identificamos que alunos que se tornam bolsitas tendem\
-                    a ficar mais tempo na Passos Mágicos - bolsistas ficam, em média 3 anos enquanto não bolsistas \
-                    ficam cerca de 1 ano.
-
                     Para aprofundar, analisamos como ocorria a progressão das principais métricas ao longo das fases por\
                     cada perfil de aluno (bolsista ou não).
                     
@@ -562,7 +564,13 @@ if __name__ == '__main__':
 
     with tab_modelo:
         with st.spinner('Aguardando carregamento'):
-            st.header('Classificação de alunos bolsistas')
+            st.header('Modelo de Classificação de alunos bolsistas')
+
+            st.write('''
+                    
+                    Adicionar algum texto nessa parte - senão retirar
+
+            ''')
 
             df_filtrado_2022  = get_df_ml_2022()
 
@@ -801,5 +809,4 @@ if __name__ == '__main__':
                 width = 800
             )
             st.plotly_chart(fig)
-
 
