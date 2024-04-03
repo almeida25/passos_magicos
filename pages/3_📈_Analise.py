@@ -334,7 +334,7 @@ if __name__ == '__main__':
             fig = px.pie(df_grouped_by_categoria_bolsa, values='ANO_PESQUISA', names='categoria_bolsa')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
             st.plotly_chart(fig)
