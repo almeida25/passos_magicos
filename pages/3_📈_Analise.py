@@ -341,7 +341,7 @@ if __name__ == '__main__':
 
             st.divider()
 
-            st.write('ANÁLISE IDA E IPP – INDICADOS E NÃO INDICADOS A BOLSA EM 2022')
+            st.subheader('ANÁLISE IDA E IPP – INDICADOS E NÃO INDICADOS A BOLSA EM 2022')
             fig = px.box(data_frame=df[['IDA', 'INDICADO_BOLSA']], x='INDICADO_BOLSA', y='IDA')
 
             fig.update_layout(
@@ -354,9 +354,7 @@ if __name__ == '__main__':
             
             st.divider()
 
-            st.write('ANÁLISE IDA E IPP DOS INDICADOS A BOLSA POR FASE')
-            st.write('Barra e linha -> barra quantidade e média por linha')
-            st.write('x -> fase')
+            st.subheader('ANÁLISE IDA E IPP DOS INDICADOS A BOLSA POR FASE')
 
             fig = px.bar(df_grouped_by_categoria_bolsa, x='categoria_bolsa', y='ANO_PESQUISA')
             fig.update_layout(
