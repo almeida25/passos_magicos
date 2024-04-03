@@ -346,7 +346,7 @@ if __name__ == '__main__':
 
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="#0e1117",
+                paper_bgcolor="Black",
                 width = 800,
                 height = 550,
             )
