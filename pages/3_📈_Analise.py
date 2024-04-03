@@ -325,6 +325,11 @@ if __name__ == '__main__':
             df_grouped_by_categoria_bolsa = df[['categoria_bolsa', 'ANO_PESQUISA']].groupby('categoria_bolsa').count().reset_index()
 
             st.subheader('Análise de indicadores por alunos indicados ou não a bolsa no ano de pesquisa 2022')
+            st.write('Na avaliação da base de alunos como um todo, onde mais se pode fazer avaliações é analisando \
+                     diretamentamente da relação desempenho x obtenção de bolsa.')
+            st.write('Abaixo são mostrados gráficos que apresentam essas informações')
+
+            st.write('Comparação dos indicados e não indicados a bolsa em 2022')
 
             st.write('COMPARAÇÃO DOS INDICADOS E NÃO INDICADOS A BOLSA EM 2022')
             fig = px.pie(df_grouped_by_categoria_bolsa, values='ANO_PESQUISA', names='categoria_bolsa')
