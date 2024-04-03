@@ -279,6 +279,8 @@ if __name__ == '__main__':
             st.divider()
 
             st.subheader('Avaliação dos indices')
+            st.write('Nesta seleção ao indicar o período de tempo e o indice que é desejado avaliar, é apresentado\
+                     a média do selecionado com base no ano ou anos')
             list_year = st.multiselect('Selecione o ano', [2020,2021,2022], default=[2020], key='multi_ind_year')
             indicators = ('IAA', 'IEG', 'IPS', 'IDA', 'IPP', 'IPV', 'IAN')
             select_ind = st.multiselect('Indicadores', indicators, default=['IAA'], key='mult_ind')
