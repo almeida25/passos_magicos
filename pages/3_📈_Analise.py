@@ -394,43 +394,7 @@ if __name__ == '__main__':
             )
             st.plotly_chart(fig)
 
-            # st.subheader('Input dos dados')
-
-            # file_database_students = st.file_uploader('Upload arquivo',)
-
-            # if file_database_students:
-            #     if '.csv' in file_database_students.name:
-            #         df_pm_input = pd.read_csv(file_database_students, sep=';', header=0)
-            #     else:
-            #         df_pm_input = pd.read_excel(file_database_students, header=0)
-
-            #     if not df_pm_input.empty:
-            #         st.dataframe(df_pm_input)
-
             st.divider()
-
-            # st.subheader('Modelo de Machine Learning')
-            # st.write('Alunos')
-
-            # df_final_tratado = get_df_final()
-
-            # #fig = df_final_tratado.hist(bins=100, figsize=(12, 12))
-            # fig, ax = plt.subplots()
-            # df_final_tratado.hist(bins=100, ax=ax, figsize=(12, 12))
-            # st.pyplot(fig)
-
-            # st.divider()
-
-            # st.subheader('Gráfico de correlação das colunas')
-            
-            # df_numeric = df_final_tratado.select_dtypes(include=[np.number])
-            # correlation_matrix = df_numeric.corr().round(2)
-
-            # fig, ax = plt.subplots(figsize=(15,10))
-            # sns.heatmap(data=correlation_matrix, annot=True, linewidths=.5, ax=ax)
-            # st.pyplot(fig)
-            
-            # st.divider()
 
             st.subheader('Correção menor')
 
