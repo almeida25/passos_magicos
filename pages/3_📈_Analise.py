@@ -397,7 +397,8 @@ if __name__ == '__main__':
             st.divider()
 
             st.subheader('Correção menor')
-
+            df_final_tratado = get_df_final()
+            
             df_filtrado = df_final_tratado[['NIVEL_IDEAL', 'PONTO_VIRADA',
                                             'INDE', 'IEG', 'IDA', 'IPV', 'IAA', 
                                             'IPS', 'IPP', 'IAN', 'BOLSISTA_GERAL', 
