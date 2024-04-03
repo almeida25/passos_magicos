@@ -67,6 +67,7 @@ def get_df_ml():
 
     df_final_passos = pd.concat([df_2020, df_2021, df_2022], ignore_index=True)
     colunas = ['IEG', 'IDA', 'IPV', 'IAA', 'IPS', 'IPP', 'IAN', 'IDADE_ALUNO', 'ANOS_PM', 'INDE']
+    
     for coluna in colunas:
         df_final_passos[coluna] = pd.to_numeric(df_final_passos[coluna], errors='coerce')
     # organiza dados em colunas
@@ -76,6 +77,7 @@ def get_df_ml():
     colunas = ['IEG', 'IDA', 'IPV', 'IAA', 'IPS', 'IPP', 'IAN', 'IDADE_ALUNO', 'ANOS_PM', 'INDE']
     for coluna in colunas:
         df_final_passos[coluna] = pd.to_numeric(df_final_passos[coluna], errors='coerce')
+        
     # organiza dados em colunas
     df_final_filtrado  = df_final_passos[['NOME','ANO_PESQUISA','ANO_INGRESSO','INSTITUICAO_ENSINO_ALUNO','IDADE_ALUNO','ANOS_PM','FASE','TURMA','NIVEL_IDEAL','PONTO_VIRADA','INDICADO_BOLSA','BOLSISTA','INDE','INDE_CONCEITO','PEDRA','DESTAQUE_IEG','DESTAQUE_IDA','DESTAQUE_IPV','IEG','IDA','IPV','IAA','IPS','IPP','IAN','CF','CG','CT','QTD_AVAL','REC_AVA_1','REC_AVA_2','REC_AVA_3','REC_AVA_4','REC_EQUIPE_1','REC_EQUIPE_2','REC_EQUIPE_3','REC_EQUIPE_4','DEFASAGEM','SINALIZADOR_INGRESSANTE','NOTA_PORT','NOTA_MAT','NOTA_ING']]
     excluir_outlier = df_final_filtrado[df_final_filtrado['NOME'] == 'ALUNO-1259'].index
