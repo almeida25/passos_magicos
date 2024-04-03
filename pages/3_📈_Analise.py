@@ -326,7 +326,8 @@ if __name__ == '__main__':
 
             st.subheader('Análise de indicadores por alunos indicados ou não a bolsa no ano de pesquisa 2022')
             st.write('Na avaliação da base de alunos como um todo, onde mais se pode fazer avaliações é analisando \
-                     diretamentamente da relação desempenho x obtenção de bolsa.')
+                     diretamentamente da relação desempenho x obtenção de bolsa. \
+                     Abaixo são mostrados gráficos que apresentam essas informações')
             st.write('Abaixo são mostrados gráficos que apresentam essas informações')
 
             st.write('Comparação dos indicados e não indicados a bolsa em 2022')
