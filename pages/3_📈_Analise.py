@@ -331,8 +331,6 @@ if __name__ == '__main__':
             st.write('Abaixo são mostrados gráficos que apresentam essas informações')
 
             st.write('Comparação dos indicados e não indicados a bolsa em 2022')
-
-            st.write('COMPARAÇÃO DOS INDICADOS E NÃO INDICADOS A BOLSA EM 2022')
             fig = px.pie(df_grouped_by_categoria_bolsa, values='ANO_PESQUISA', names='categoria_bolsa')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
