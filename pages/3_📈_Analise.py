@@ -265,7 +265,7 @@ if __name__ == '__main__':
             # Grafico de pie
             st.subheader('Avaliação das Pedras por ano:')
             st.write('Ao selecionar cada ano ele monta a porcentagem da quantidade de alunos em cada pedra. \
-            Buscando entender qual foi a pedra que mais se manteve entre os alunos')
+            Buscando entender qual foi a pedra que mais se manteve entre os alunos.')
             list_year = st.multiselect('Selecione o ano', [2020,2021,2022], default=[2020])
             if len(list_year) > 0:
                 df_grouped_pedra = df_final_pm.loc[df_final_pm['ANO'].isin(list_year)].groupby('PEDRA').count()
@@ -280,7 +280,7 @@ if __name__ == '__main__':
 
             st.subheader('Avaliação dos indices')
             st.write('Nesta seleção ao indicar o período de tempo e o indice que é desejado avaliar, é apresentado\
-                     a média do selecionado com base no ano ou anos')
+                     a média do selecionado com base no ano ou anos.')
             list_year = st.multiselect('Selecione o ano', [2020,2021,2022], default=[2020], key='multi_ind_year')
             indicators = ('IAA', 'IEG', 'IPS', 'IDA', 'IPP', 'IPV', 'IAN')
             select_ind = st.multiselect('Indicadores', indicators, default=['IAA'], key='mult_ind')
@@ -303,7 +303,7 @@ if __name__ == '__main__':
 
             st.subheader('Número de alunos por Fase')
             st.write('O gráfico permite acompanhar em cada fase a queda ou aumento de alunos\
-            em uma determinada fase escolar. Possibilitando realizar comparativos')
+            em uma determinada fase escolar. Possibilitando realizar comparativos.')
             
             df_pm_fase = df_final_pm[['FASE', 'ANO']].dropna()
             df_pm_fase['FASE'] = df_pm_fase['FASE'].astype(int)
