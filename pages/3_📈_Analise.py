@@ -227,7 +227,12 @@ if __name__ == '__main__':
 
     with tab_interacao:
         with st.spinner('Aguardando carregamento'):
-            st.write('Com os dados disponibilizados é possível realizar um acompanhamento e ')
+            st.write('Nesta aba é feita a própria costumização para buscar as informações necessárias a cada momento. \
+            Logo abaixo é possível visualizar o andamento do número dos alunos com o passar dos anos, percebendo o crescimento do projeto.\
+            Também perceber a composição das classes do alunos, pela procentagem de alunos em cada pedra e as médias em relação a cada índice \
+            de desenvolvimento.')
+            st.write('Com os dados disponibilizados é possível realizar um acompanhamento regular sobre o desenvolvimento \
+                dos alunos')
 
             # Leitura do dataset
             df_pm = read_dataset()
