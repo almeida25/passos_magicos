@@ -369,7 +369,7 @@ if __name__ == '__main__':
             st.plotly_chart(fig)
 
             st.divider()
-            st.subheader('Indicado por IPP')
+            st.subheader('Análise IPP - Indicados e não indicados a bolsa')
 
             fig = px.box(data_frame=df[['IPP', 'INDICADO_BOLSA']], x='INDICADO_BOLSA', y='IPP')
 
