@@ -346,7 +346,7 @@ if __name__ == '__main__':
 
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800,
                 height = 550,
             )
@@ -361,7 +361,7 @@ if __name__ == '__main__':
             fig = px.bar(df_grouped_by_categoria_bolsa, x='categoria_bolsa', y='ANO_PESQUISA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
 
@@ -374,7 +374,7 @@ if __name__ == '__main__':
 
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800,
                 height = 550,
             )
@@ -390,7 +390,7 @@ if __name__ == '__main__':
 
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800,
                 height = 400,
             )
@@ -403,7 +403,7 @@ if __name__ == '__main__':
 
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800,
                 height = 400,
             )
@@ -653,7 +653,7 @@ if __name__ == '__main__':
             fig = px.scatter(df_2022_model, x='QTD_AVAL', y ='INDICADO_BOLSA', color='labels')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
             st.plotly_chart(fig)
@@ -704,7 +704,7 @@ if __name__ == '__main__':
             fig = px.scatter(df_2022_model_v2, x='IEG', y ='IDA', color='labels')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
 
@@ -714,7 +714,7 @@ if __name__ == '__main__':
             fig = px.scatter(df_2022_model_v2, x='IEG', y ='IDA', color='PEDRA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
 
@@ -755,7 +755,7 @@ if __name__ == '__main__':
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='ANO_PESQUISA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
             st.plotly_chart(fig)
@@ -764,7 +764,7 @@ if __name__ == '__main__':
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='PONTO_VIRADA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
 
@@ -776,7 +776,7 @@ if __name__ == '__main__':
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='labels')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
 
@@ -787,7 +787,7 @@ if __name__ == '__main__':
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='INDICADO_BOLSA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="LightSteelBlue",
+                paper_bgcolor="Black",
                 width = 800
             )
             st.plotly_chart(fig)
