@@ -341,7 +341,9 @@ if __name__ == '__main__':
 
             st.divider()
 
-            st.subheader('ANÁLISE IDA E IPP – INDICADOS E NÃO INDICADOS A BOLSA EM 2022')
+            st.subheader('Análise IDA e IPP - Indicados e não indicados a bolsa')
+            st.write('No gráfico queremos encontrar a composição das notas separadas pelos dois tipos de \
+            possiblidade, com e sem bolsa.')
             fig = px.box(data_frame=df[['IDA', 'INDICADO_BOLSA']], x='INDICADO_BOLSA', y='IDA')
 
             fig.update_layout(
@@ -354,7 +356,8 @@ if __name__ == '__main__':
             
             st.divider()
 
-            st.subheader('ANÁLISE IDA E IPP DOS INDICADOS A BOLSA POR FASE')
+            st.subheader('Contagem das catogorias')
+            st.write('Gráfico agrupado da contagem dos tipos de informação de bolsa')
 
             fig = px.bar(df_grouped_by_categoria_bolsa, x='categoria_bolsa', y='ANO_PESQUISA')
             fig.update_layout(
