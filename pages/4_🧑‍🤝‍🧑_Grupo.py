@@ -13,5 +13,5 @@ if __name__ == '__main__':
         st.subheader('Membros')
         st.markdown("<li>Barbara Campos</li> \
                 <li>Brendon Calazans</li>\
-                <li>Carlos Eduardo</li> \
+                <li>Carlos Eduardo Miranda</li> \
                 <li>Gabriel Rosa</li>", unsafe_allow_html=True)
