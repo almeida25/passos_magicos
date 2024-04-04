@@ -381,7 +381,7 @@ if __name__ == '__main__':
             )
 
             st.plotly_chart(fig)
-'''
+            '''
             st.divider()
             st.subheader('Indicação de bolsas por fase')
             df_per_fase = df.loc[(df['INDICADO_BOLSA'] == 'Sim')]
@@ -395,8 +395,9 @@ if __name__ == '__main__':
                 width = 800,
                 height = 400,
             )
-'''
+
             st.plotly_chart(fig)
+            '''
 
             st.divider()
             st.subheader('Indicado a bolsa por fase')
@@ -643,7 +644,7 @@ if __name__ == '__main__':
             df_2022_model = df_2022_model.drop(columns=['TURMA', 'BOLSISTA'])
             df_2022_model['NOTA_PORT'] = df_2022_model['NOTA_PORT'].fillna(df_2022_model['NOTA_PORT'].mean())
             df_2022_model['NOTA_MAT'] = df_2022_model['NOTA_MAT'].fillna(df_2022_model['NOTA_MAT'].mean())  
-
+            '''
             scaler = StandardScaler()
             X = scaler.fit_transform(df_2022_model)
 
@@ -724,6 +725,7 @@ if __name__ == '__main__':
             st.plotly_chart(fig)
 
             st.divider()
+            '''
             st.header('Classificação V2')
 
             df_final_filtrado_v2 = get_df_final_filtrado()
