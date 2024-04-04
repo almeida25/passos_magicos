@@ -351,6 +351,8 @@ if __name__ == '__main__':
 
             st.divider()
 
+            st.markdown('<img src="../assets/Imagem1.png" style="background-color: white;"/>',unsafe_allow_html=True)
+            
             st.image('././assets/Imagem1.png')
             
             st.subheader('Análise IDA - Indicados e não indicados a bolsa')
