@@ -324,11 +324,20 @@ if __name__ == '__main__':
             df = get_df_final_v2()
             df_grouped_by_categoria_bolsa = df[['categoria_bolsa', 'ANO_PESQUISA']].groupby('categoria_bolsa').count().reset_index()
 
+            st.subheader('Motivação do estudo')
+            st.write('''A conquista de uma bolsa de estudos em uma instituição de qualidade \
+                 representa muito mais do que simplesmente acesso a educação. Para um aluno de baixa renda, \
+                 essa oportunidade se torna uma verdadeira porta de entrada para um futuro repleto de \
+                 possibilidades e transformações.\
+
+                Com essa motivação, buscamos analisar o que leva um aluno da Passos Mágicos a\
+                 conquistar a indicação a bolsa de estudos.''')
+
+            st.divider()
             st.subheader('Análise de indicadores por alunos indicados ou não a bolsa no ano de pesquisa 2022')
             st.write('Na avaliação da base de alunos como um todo, onde mais se pode fazer avaliações é analisando \
                      diretamentamente da relação desempenho x obtenção de bolsa. \
                      Abaixo são mostrados gráficos que apresentam essas informações')
-            st.write('Abaixo são mostrados gráficos que apresentam essas informações')
 
             st.write('Comparação dos indicados e não indicados a bolsa em 2022')
             fig = px.pie(df_grouped_by_categoria_bolsa, values='ANO_PESQUISA', names='categoria_bolsa')
