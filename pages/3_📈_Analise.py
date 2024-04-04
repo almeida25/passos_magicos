@@ -381,7 +381,7 @@ if __name__ == '__main__':
             )
 
             st.plotly_chart(fig)
-
+'''
             st.divider()
             st.subheader('Indicação de bolsas por fase')
             df_per_fase = df.loc[(df['INDICADO_BOLSA'] == 'Sim')]
@@ -395,7 +395,7 @@ if __name__ == '__main__':
                 width = 800,
                 height = 400,
             )
-
+'''
             st.plotly_chart(fig)
 
             st.divider()
