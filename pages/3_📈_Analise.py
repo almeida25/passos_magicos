@@ -222,7 +222,7 @@ if __name__ == '__main__':
     st.markdown('''img {
                     background-color: white
                     }
-        }''',unsafe_allow_html=True)
+        ''',unsafe_allow_html=True)
     st.title('📈 Análise')
 
     tab_interacao, tab_insights, tab_modelo = st.tabs(['Interação', 'Insights', 'Modelo de Machine Learning'])
