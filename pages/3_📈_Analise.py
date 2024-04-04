@@ -351,7 +351,7 @@ if __name__ == '__main__':
 
             st.divider()
 
-            st.image('../assets/Imagem1.png')
+            st.image('./../assets/Imagem1.png')
             
             st.subheader('Análise IDA - Indicados e não indicados a bolsa')
             st.write('No gráfico queremos encontrar a composição das notas separadas pelos dois tipos de \
