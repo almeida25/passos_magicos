@@ -349,7 +349,8 @@ if __name__ == '__main__':
 
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
                 width = 800,
                 height = 550,
             )
@@ -363,7 +364,8 @@ if __name__ == '__main__':
             fig = px.bar(df_grouped_by_categoria_bolsa, x='categoria_bolsa', y='ANO_PESQUISA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
                 width = 800
             )
 
@@ -376,7 +378,8 @@ if __name__ == '__main__':
 
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
                 width = 800,
                 height = 550,
             )
@@ -390,7 +393,8 @@ if __name__ == '__main__':
 
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
                 width = 800,
                 height = 400,
             )
@@ -739,7 +743,8 @@ if __name__ == '__main__':
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='ANO_PESQUISA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
                 width = 800
             )
             st.plotly_chart(fig)
@@ -748,7 +753,8 @@ if __name__ == '__main__':
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='PONTO_VIRADA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
                 width = 800
             )
 
@@ -760,7 +766,8 @@ if __name__ == '__main__':
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='labels')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
                 width = 800
             )
 
@@ -771,7 +778,8 @@ if __name__ == '__main__':
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='INDICADO_BOLSA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
                 width = 800
             )
             st.plotly_chart(fig)
