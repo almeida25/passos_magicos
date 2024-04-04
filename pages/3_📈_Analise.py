@@ -381,23 +381,6 @@ if __name__ == '__main__':
             )
 
             st.plotly_chart(fig)
-            '''
-            st.divider()
-            st.subheader('Indicação de bolsas por fase')
-            df_per_fase = df.loc[(df['INDICADO_BOLSA'] == 'Sim')]
-            df_per_fase['FASE'] = df_per_fase['FASE'].astype(int)
-            
-            fig = px.bar(data_frame=df_grouped_per_fase, x='FASE', y='FASE')
-
-            fig.update_layout(
-                margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor="Black",
-                width = 800,
-                height = 400,
-            )
-
-            st.plotly_chart(fig)
-            '''
 
             st.divider()
             st.subheader('Indicado a bolsa por fase')
