@@ -693,7 +693,7 @@ if __name__ == '__main__':
             # df_2022_model_v2 = df_2022_model_v2.loc[~df_2022_model_v2['INDICADO_BOLSA'].isna()]
 
             fig, ax = plt.subplots(figsize=(25,10))
-            st.dataframe(df_2022_model_v2)
+            #st.dataframe(df_2022_model_v2)
             sns.scatterplot(data=df_2022_model_v2, x='IEG', y='IDA', hue='PEDRA', ax=ax)
             st.pyplot(fig)
             df_2022_model_v2 = df_2022_model_v2.loc[~df_2022_model_v2['PEDRA'].isna()]
