@@ -371,21 +371,6 @@ if __name__ == '__main__':
                 height = 550,
             )
             st.plotly_chart(fig)
-            
-            st.divider()
-
-            st.subheader('Contagem das categorias')
-            st.write('Gráfico agrupado da contagem dos tipos de informação de bolsa')
-
-            fig = px.bar(df_grouped_by_categoria_bolsa, x='categoria_bolsa', y='ANO_PESQUISA')
-            fig.update_layout(
-                margin=dict(l=20, r=20, t=20, b=20),
-                paper_bgcolor='rgba(0,0,0,0)',
-                plot_bgcolor='rgba(0,0,0,0)',
-                width = 800
-            )
-
-            st.plotly_chart(fig)
 
             st.divider()
             st.subheader('Análise IPP - Indicados e não indicados a bolsa')
@@ -549,183 +534,12 @@ if __name__ == '__main__':
 
     with tab_modelo:
         with st.spinner('Aguardando carregamento'):
-            st.header('Modelo de Classificação de alunos bolsistas')
 
-            # st.write('''
-                    
-            #         Adicionar algum texto nessa parte - senão retirar
-
-            # ''')
-
-            # df_filtrado_2022  = get_df_ml_2022()
-
-            # df_2022_model = df_filtrado_2022.loc[df_filtrado_2022['BOLSISTA'] == 'Não']
-            # df_2022_model = df_2022_model[['FASE', 'TURMA', 'ANO_INGRESSO', 'BOLSISTA', 'INDE','PEDRA',
-            # 'DESTAQUE_IEG', 'DESTAQUE_IDA', 'DESTAQUE_IPV', 'NOTA_PORT', 'NOTA_MAT', 'QTD_AVAL', 'REC_AVA_1',
-            # 'REC_AVA_2', 'REC_AVA_3', 'REC_AVA_4', 'INDICADO_BOLSA', 'PONTO_VIRADA',
-            # 'NIVEL_IDEAL']]
-            # dict_pedra = {
-            #     "Quartzo": 1,
-            #     "Ágata": 2,
-            #     "Ametista": 3,
-            #     "Topázio":4
-            # }
-            # df_2022_model['PEDRA'] = df_2022_model['PEDRA'].map(dict_pedra)
-            # dict_destaque_ieg = {
-            #     "Destaque: A sua boa entrega das lições de casa.": 1,
-            #     "Melhorar: Melhorar a sua entrega de lições de casa.": 0
-            # }
-
-            # dict_destaque_ida = {
-            #     "Destaque: As suas boas notas na Passos Mágicos.": 1,
-            #     "Melhorar: Empenhar-se mais nas aulas e avaliações.": 0
-            # }
-
-            # dict_destaque_ipv = {
-            #     "Destaque: A sua boa integração aos Princípios Passos Mágicos.": 1,
-            #     "Melhorar: Integrar-se mais aos Princípios Passos Mágicos.": 0
-            # }
-            # df_2022_model['DESTAQUE_IEG'] = df_2022_model['DESTAQUE_IEG'].map(dict_destaque_ieg)
-            # df_2022_model['DESTAQUE_IDA'] = df_2022_model['DESTAQUE_IDA'].map(dict_destaque_ida)
-            # df_2022_model['DESTAQUE_IPV'] = df_2022_model['DESTAQUE_IPV'].map(dict_destaque_ipv)
-
-            # dict_rec_ava = {
-            #     "Alocado em Fase anterior":-1,
-            #     "Não avaliado": 0,
-            #     "Mantido na Fase atual": 1,
-            #     "Mantido na Fase + Bolsa": 2,
-            #     "Promovido de Fase": 3,
-            #     "Promovido de Fase + Bolsa": 4
-            # }
-
-            # df_2022_model['REC_AVA_1'] = df_2022_model['REC_AVA_1'].fillna('Não avaliado')
-            # df_2022_model['REC_AVA_2'] = df_2022_model['REC_AVA_2'].fillna('Não avaliado')
-            # df_2022_model['REC_AVA_3'] = df_2022_model['REC_AVA_3'].fillna('Não avaliado')
-            # df_2022_model['REC_AVA_4'] = df_2022_model['REC_AVA_4'].fillna('Não avaliado')
-
-            # df_2022_model['REC_AVA_1'] = df_2022_model['REC_AVA_1'].map(dict_rec_ava)
-            # df_2022_model['REC_AVA_2'] = df_2022_model['REC_AVA_2'].map(dict_rec_ava)
-            # df_2022_model['REC_AVA_3'] = df_2022_model['REC_AVA_3'].map(dict_rec_ava)
-            # df_2022_model['REC_AVA_4'] = df_2022_model['REC_AVA_4'].map(dict_rec_ava)
-
-            # dict_indicado_bolsa = {
-            #     "Sim": 1,
-            #     "Não": 0
-            # }
-
-            # df_2022_model['INDICADO_BOLSA'] = df_2022_model['INDICADO_BOLSA'].map(dict_indicado_bolsa)
-            # dict_ponto_virada = {
-            #     "Sim": 1,
-            #     "Não": 0
-            # }
-            # df_2022_model['PONTO_VIRADA'] = df_2022_model['PONTO_VIRADA'].map(dict_ponto_virada)
-            # dict_nivel_ideal = {
-            #     "ALFA  (2o e 3o ano)"       :	0.5,
-            #     "ALFA  (2º e 3º ano)"       :	0.5,
-            #     "Nível 1 (4o ano)"          :	1,
-            #     "Fase 1 (4º ano)"           :	1,
-            #     "Nível 2 (5o e 6o ano)"     :	2,
-            #     "Fase 2 (5º e 6º ano)"      :	2,
-            #     "Nível 3 (7o e 8o ano)"     :	3,
-            #     "Fase 3 (7º e 8º ano)"      :	3,
-            #     "Fase 4 (9º ano)"           :	4,
-            #     "Nível 4 (9o ano)"          :	4,
-            #     "Fase 5 (1º EM)"            :	5,
-            #     "Nível 5 (1o EM)"           :	5,
-            #     "Fase 6 (2º EM)"            :	6,
-            #     "Nível 6 (2o EM)"           :	6,
-            #     "Fase 7 (3º EM)"            :	7,
-            #     "Nível 7 (3o EM)"           :	7,
-            #     "Nível 8 (Universitários)"  :	8,
-            #     "Fase 8 (Universitários)"   :	8
-            # }
-            # df_2022_model['NIVEL_IDEAL'] = df_2022_model['NIVEL_IDEAL'].map(dict_nivel_ideal).fillna(0).astype(float)
-            # df_2022_model = df_2022_model.drop(columns=['TURMA', 'BOLSISTA'])
-            # df_2022_model['NOTA_PORT'] = df_2022_model['NOTA_PORT'].fillna(df_2022_model['NOTA_PORT'].mean())
-            # df_2022_model['NOTA_MAT'] = df_2022_model['NOTA_MAT'].fillna(df_2022_model['NOTA_MAT'].mean())  
-            
-            # scaler = StandardScaler()
-            # X = scaler.fit_transform(df_2022_model)
-
-
-            # km = KMeans(n_clusters=4,init='k-means++', random_state=42)
-
-            # labels = km.fit_predict(X)
-
-            # df_2022_model['labels'] = labels.astype(str)
-            # fig = px.scatter(df_2022_model, x='QTD_AVAL', y ='INDICADO_BOLSA', color='labels')
-            # fig.update_layout(
-            #     margin=dict(l=20, r=20, t=20, b=20),
-            #     paper_bgcolor="Black",
-            #     width = 800
-            # )
-            # st.plotly_chart(fig)
-
-            # X = df_2022_model[['FASE', 'ANO_INGRESSO', 'INDE', 'PEDRA', 'DESTAQUE_IEG', 'DESTAQUE_IDA',
-            # 'DESTAQUE_IPV', 'NOTA_PORT', 'NOTA_MAT', 'QTD_AVAL', 'REC_AVA_1',
-            # 'REC_AVA_2', 'REC_AVA_3', 'REC_AVA_4', 'PONTO_VIRADA',
-            # 'NIVEL_IDEAL']]
-            # y = df_2022_model['INDICADO_BOLSA']
-
-            # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
-
-            # scaler = StandardScaler()
-            # scaler.fit(X_train)
-            # scaler.fit(X_test)
-
-            # X_train = scaler.transform(X_train)
-            # X_test = scaler.transform(X_test)
-
-            # df_final = get_df_final_filtrado()
-            # df_2022_model_v2 = df_final[['PEDRA', 'IEG', 'IDA']]
-            # dict_pedra = {
-            #     "Quartzo": 1,
-            #     "Ágata": 2,
-            #     "Ametista": 3,
-            #     "Topázio":4
-            # }
-            # df_2022_model_v2['PEDRA'] = df_2022_model_v2['PEDRA'].map(dict_pedra)
-            # dict_indicado_bolsa = {
-            #     "Sim": 1,
-            #     "Não": 0
-            # }
-            # #df_2022_model_v2['INDICADO_BOLSA'] = df_2022_model['INDICADO_BOLSA'].map(dict_indicado_bolsa)
-            # # df_2022_model_v2 = df_2022_model_v2.loc[~df_2022_model_v2['INDICADO_BOLSA'].isna()]
-
-            # fig, ax = plt.subplots(figsize=(25,10))
-            # #st.dataframe(df_2022_model_v2)
-            # sns.scatterplot(data=df_2022_model_v2, x='IEG', y='IDA', hue='PEDRA', ax=ax)
-            # st.pyplot(fig)
-            # df_2022_model_v2 = df_2022_model_v2.loc[~df_2022_model_v2['PEDRA'].isna()]
-
-            # scaler = StandardScaler()
-            # X = scaler.fit_transform(df_2022_model_v2)
-            # km = KMeans(n_clusters=2,init='k-means++', random_state=42)
-
-            # labels = km.fit_predict(X)
-            # df_2022_model_v2['labels'] = labels.astype(str)
-            # fig = px.scatter(df_2022_model_v2, x='IEG', y ='IDA', color='labels')
-            # fig.update_layout(
-            #     margin=dict(l=20, r=20, t=20, b=20),
-            #     paper_bgcolor="Black",
-            #     width = 800
-            # )
-
-            # st.plotly_chart(fig)
-
-            # df_2022_model_v2['labels'] = labels.astype(str)
-            # fig = px.scatter(df_2022_model_v2, x='IEG', y ='IDA', color='PEDRA')
-            # fig.update_layout(
-            #     margin=dict(l=20, r=20, t=20, b=20),
-            #     paper_bgcolor="Black",
-            #     width = 800
-            # )
-
-            # st.plotly_chart(fig)
-
-            # st.divider()
-            
-            st.header('Classificação V2')
+            st.subheader('Evolução do IEG e IDA com base nos anos')
+            st.write('''
+                    Com base no que foi analisado referente aos indicadores de IEG e IDA, \
+                    percebemos uma melhoria com base de acordo com os anos que vão se passando.
+            ''')
 
             df_final_filtrado_v2 = get_df_final_filtrado()
             df_final_filtrado_v2 = df_final_filtrado_v2.loc[df_final_filtrado_v2['PEDRA'] != "#NULO!"]
@@ -753,8 +567,6 @@ if __name__ == '__main__':
             labels = km.fit_predict(X)
             df_2022_model_v2['labels'] = labels.astype(str)
             df_grouped = pd.merge(df_final_filtrado_v2, df_2022_model_v2, left_index=True, right_index=True)
-            
-            st.subheader('Ano de pesquisa')
 
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='ANO_PESQUISA')
             fig.update_layout(
@@ -766,6 +578,11 @@ if __name__ == '__main__':
             st.plotly_chart(fig)
 
             st.subheader('PONTO VIRADA')
+            st.write('''
+                    Outro ponto bem interessante de analisarmos é o ponto de virada.\
+                    Percebemos que esse indicador é bem importante para demonstrar que os alunos que atingiram o ponto de virada,\
+                    são os alunos que contém as mais notas de IDA e IEG, ou seja, são os alunos mais propicios a receberem bolsa.
+            ''')
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='PONTO_VIRADA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
@@ -775,10 +592,21 @@ if __name__ == '__main__':
             )
 
             st.plotly_chart(fig)
-
+            
+            st.header('Modelo de Classificação de alunos bolsistas')
             st.subheader('Clusterização')
-            st.write('Previsto')
+            st.write('''
+                Visando auxiliar no dia-a-dia da passos mágicos, desenvolvemos um modelo de clusterização, \
+                que tem como objetivo auxiliar os profissionais da passos mágicos nesse momento tão importante \
+                de indicação de bolsa. Temos abaixo duas visões, sendo:
+            ''')
 
+            st.write('''
+                    *1° Visão:*
+                    Previsão do Modelo - Treinamos esse modelo com os indicadores utilizados hoje para definição de \
+                    inidicação de bolsa(Pedras: Topázio ou Ametista, INDE > 7 e IDA > 8);
+            ''') 
+            
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='labels')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
@@ -790,7 +618,12 @@ if __name__ == '__main__':
             st.plotly_chart(fig)
             st.divider()
 
-            st.write('Real')
+            st.write('''
+                    *2° Visão:*
+                    Resultados reais atualmente - Percebemos que atualmente alguns alunos são indicados a bolsa,\
+                    mesmo tendo algum dos indicadores abaixo da regra definida.
+            ''')
+            
             fig = px.scatter(df_grouped, x='IEG_y', y ='IDA_y', color='INDICADO_BOLSA')
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
@@ -799,4 +632,9 @@ if __name__ == '__main__':
                 width = 800
             )
             st.plotly_chart(fig)
+
+            st.write('''
+                    Obs: O objetivo do modelo não é criar a definição dos alunos que devem ser indicados a bolsa,\
+                    mas sim auxiliar os profissionais na tomada de decisão desse processo.
+            ''')
 
