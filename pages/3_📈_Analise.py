@@ -219,10 +219,13 @@ def get_df_final():
 
 if __name__ == '__main__':
     apply_custom_style()
-    st.markdown('''img {
-                    backgroundColor: white
-                    }
-        ''',unsafe_allow_html=True)
+       st.markdown('''
+        <style>
+            img {
+                background-color: white;
+            }
+        </style>
+    ''', unsafe_allow_html=True)
     st.title('📈 Análise')
 
     tab_interacao, tab_insights, tab_modelo = st.tabs(['Interação', 'Insights', 'Modelo de Machine Learning'])
