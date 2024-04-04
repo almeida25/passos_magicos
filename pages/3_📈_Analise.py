@@ -350,7 +350,12 @@ if __name__ == '__main__':
             st.plotly_chart(fig)
 
             st.divider()
-            
+
+            st.subheader('COMPOSIÇÃO DO INDE – COMPARAÇÃO DOS INDICADOS E NÃO INDICADOS A BOLSA EM 2022')
+            st.write('''
+            As maiores diferenças entre indicado e não indicado a bolsa em 2022 está em IDA\
+                      (índice de aprendizagem) e IPP (índice psicopedagógico)
+                    ''')
             st.image('././assets/Imagem1.png')
             
             st.subheader('Análise IDA - Indicados e não indicados a bolsa')
