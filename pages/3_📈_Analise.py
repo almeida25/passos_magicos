@@ -383,7 +383,7 @@ if __name__ == '__main__':
             st.plotly_chart(fig)
 
             st.divider()
-            st.subheader('')
+            st.subheader('Indicação de bolsas por fase')
             df_per_fase = df.loc[(df['INDICADO_BOLSA'] == 'Sim')]
             df_per_fase['FASE'] = df_per_fase['FASE'].astype(int)
             df_grouped_per_fase = df[['FASE', 'INDICADO_BOLSA']]
@@ -412,7 +412,9 @@ if __name__ == '__main__':
 
             st.divider()
 
-            st.subheader('Correção menor')
+            st.subheader('Correlação das variáveis da base')
+            st.write('No gráfico é apresentado um valor em comparação com outro dado\
+            podendo identificar as correlações entre cada campo. Quanto maior o número maior sua correlação.')
             df_final_tratado = get_df_final()
             
             df_filtrado = df_final_tratado[['NIVEL_IDEAL', 'PONTO_VIRADA',
