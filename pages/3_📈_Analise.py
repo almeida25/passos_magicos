@@ -386,7 +386,7 @@ if __name__ == '__main__':
             st.subheader('Indicação de bolsas por fase')
             df_per_fase = df.loc[(df['INDICADO_BOLSA'] == 'Sim')]
             df_per_fase['FASE'] = df_per_fase['FASE'].astype(int)
-            df_grouped_per_fase = df[['FASE', 'INDICADO_BOLSA']]
+            
             fig = px.bar(data_frame=df_grouped_per_fase, x='FASE', y='FASE')
 
             fig.update_layout(
@@ -401,6 +401,7 @@ if __name__ == '__main__':
 
             st.divider()
             st.subheader('Indicado a bolsa por fase')
+            df_grouped_per_fase = df[['FASE', 'INDICADO_BOLSA']]
             fig = px.bar(data_frame=df_grouped_per_fase, x='FASE', y='FASE', color='INDICADO_BOLSA')
 
             fig.update_layout(
