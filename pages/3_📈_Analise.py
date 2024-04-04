@@ -356,7 +356,7 @@ if __name__ == '__main__':
             
             st.divider()
 
-            st.subheader('Contagem das catogorias')
+            st.subheader('Contagem das categorias')
             st.write('Gráfico agrupado da contagem dos tipos de informação de bolsa')
 
             fig = px.bar(df_grouped_by_categoria_bolsa, x='categoria_bolsa', y='ANO_PESQUISA')
