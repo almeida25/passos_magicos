@@ -220,7 +220,7 @@ def get_df_final():
 if __name__ == '__main__':
     apply_custom_style()
     st.markdown('''img {
-                    background-color: white
+                    backgroundColor: white
                     }
         ''',unsafe_allow_html=True)
     st.title('📈 Análise')
