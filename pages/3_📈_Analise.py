@@ -335,7 +335,9 @@ if __name__ == '__main__':
             fig.update_layout(
                 margin=dict(l=20, r=20, t=20, b=20),
                 paper_bgcolor="Black",
-                width = 800
+                width = 800, 
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)',
             )
             st.plotly_chart(fig)
 
