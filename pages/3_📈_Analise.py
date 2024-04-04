@@ -350,8 +350,8 @@ if __name__ == '__main__':
             st.plotly_chart(fig)
 
             st.divider()
-
-            st.subheader('Análise IDA e IPP - Indicados e não indicados a bolsa')
+            
+            st.subheader('Análise IDA - Indicados e não indicados a bolsa')
             st.write('No gráfico queremos encontrar a composição das notas separadas pelos dois tipos de \
             possiblidade, com e sem bolsa.')
             fig = px.box(data_frame=df[['IDA', 'INDICADO_BOLSA']], x='INDICADO_BOLSA', y='IDA')
