@@ -535,7 +535,7 @@ if __name__ == '__main__':
     with tab_modelo:
         with st.spinner('Aguardando carregamento'):
 
-            st.subheader('Evolução do IEG e IDA com base nos anos')
+            st.header('Evolução do IEG e IDA com base nos anos')
             st.write('''
                     Com base no que foi analisado referente aos indicadores de IEG e IDA, \
                     percebemos uma melhoria com base de acordo com os anos que vão se passando.
@@ -577,7 +577,7 @@ if __name__ == '__main__':
             )
             st.plotly_chart(fig)
 
-            st.subheader('PONTO VIRADA')
+            st.subheader('Ponto de virada')
             st.write('''
                     Outro ponto bem interessante de analisarmos é o ponto de virada.\
                     Percebemos que esse indicador é bem importante para demonstrar que os alunos que atingiram o ponto de virada,\
@@ -592,8 +592,7 @@ if __name__ == '__main__':
             )
 
             st.plotly_chart(fig)
-            
-            st.header('Modelo de Classificação de alunos bolsistas')
+        
             st.subheader('Clusterização')
             st.write('''
                 Visando auxiliar no dia-a-dia da passos mágicos, desenvolvemos um modelo de clusterização, \
